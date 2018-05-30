@@ -24,5 +24,6 @@ Route::resource('/users', 'UserController', [
 ]);
 
 Route::post('/auth/login', 'AuthController@login');
+Route::get('/auth/user', 'AuthController@user');
 Route::post('/auth/logout', 'AuthController@logout');
 Route::post('/auth/refresh', 'AuthController@refresh');

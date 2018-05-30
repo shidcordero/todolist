@@ -23,7 +23,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Route::pattern('user', '[0-9]+');
+        Route::pattern('todo', '[0-9]+');
 
         parent::boot();
     }
