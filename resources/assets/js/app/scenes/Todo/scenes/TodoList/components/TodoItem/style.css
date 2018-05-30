@@ -1,0 +1,15 @@
+.data {
+    flex-grow: 1;
+}
+
+.check {
+    cursor: pointer;
+}
+
+.lineThrough {
+	text-decoration: line-through;
+}
+
+.buttonGroup {
+	min-width: 6em;
+}

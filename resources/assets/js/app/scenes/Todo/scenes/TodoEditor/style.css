@@ -1,0 +1,11 @@
+.priorityInput {
+    flex-grow: 0.5 !important;
+}
+
+.textInput {
+    flex-grow: 4 !important;
+}
+
+.dueDateInput {
+    flex-grow: 2 !important;
+}
