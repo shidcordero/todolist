@@ -1,60 +1,45 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+# Laravel + React + Redux Todolist
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+This repo holds an implementation for a todolist app writen with 2018 Q2 technologies.
 
-## About Laravel
+![Laravel React Redux Todolist SPA demo screenshot](demo.png)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+## Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- [REST](https://en.wikipedia.org/wiki/REST) [API](https://en.wikipedia.org/wiki/Application_programming_interface) to [CRUD](https://en.wikipedia.org/wiki/CRUD) todos (with priority and due date) and users.
+- [SPA](https://en.wikipedia.org/wiki/Single-page_application) communicating with the API, providing user registration, login and ability to create, list, update, delete todos.
+- Ordering todos by priority and due date.
+- Marking finished todos.
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+## Technologies
 
-## Learning Laravel
+### Backend
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of any modern web application framework, making it a breeze to get started learning the framework.
+- [Laravel 5.6](https://laravel.com/docs/5.6)
+ - [JWT](https://en.wikipedia.org/wiki/JSON_Web_Token) based auth through a proxied [Laravel Passport](https://laravel.com/docs/5.6/passport) OAuth 2.0 server.
+- Dockerized environment via [Laradock](http://laradock.io).
 
-If you're not in the mood to read, [Laracasts](https://laracasts.com) contains over 1100 video tutorials on a range of topics including Laravel, modern PHP, unit testing, JavaScript, and more. Boost the skill level of yourself and your entire team by digging into our comprehensive video library.
+### Frontend
 
-## Laravel Sponsors
+- [React 16](https://reactjs.org) for component based view.
+- [Redux 4](https://redux.js.org) for state management and time travel debugging.
+- [Webpack 4](https://webpack.js.org) for bundling with [HMR](https://webpack.js.org/guides/hot-module-replacement).
+- [React Router 4](https://github.com/ReactTraining/react-router) for declerative routing.
+- [Babel](https://babeljs.io) for transpiling ES6 & ES7 syntax.
 
-We would like to extend our thanks to the following sponsors for helping fund on-going Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell):
+## Install
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
+For the backend You need to have Docker and Docker Compose:
 
-## Contributing
+    cd laradock
+    docker-compose up -d nginx mysql phpmyadmin redis workspace
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+For the frontend you need Node.js and NPM:
 
-## Security Vulnerabilities
+    cd resources/assets/js/app
+    npm start # Run dev server.
+    npm run build # Compile for production
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Site runs on http://localhost
+- PhpMyAdmin runs on http://localhost:8080
+- Webpack dev server runs on http://localhost:8081
