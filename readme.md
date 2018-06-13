@@ -23,9 +23,12 @@ This repo holds an implementation for a todolist app writen with 2018 Q2 technol
 
 - [React 16](https://reactjs.org) for component based view.
 - [Redux 4](https://redux.js.org) for state management and time travel debugging.
-- [Webpack 4](https://webpack.js.org) for bundling with [HMR](https://webpack.js.org/guides/hot-module-replacement).
+- [Webpack 4](https://webpack.js.org) for bundling and [HMR](https://webpack.js.org/guides/hot-module-replacement).
 - [React Router 4](https://github.com/ReactTraining/react-router) for declerative routing.
 - [Babel](https://babeljs.io) for transpiling ES6 & ES7 syntax.
+- [Bootstrap 4](https://getbootstrap.com) UI kit.
+- [Font Awesome 5](https://fontawesome.com) svg based iconic font.
+- Others: native HTML5 inputs, [moment.js](https://momentjs.com), [axios](https://github.com/axios/axios), etc...
 
 ## Install
 
