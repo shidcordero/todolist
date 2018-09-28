@@ -32,17 +32,36 @@ This repo holds an implementation for a todolist app writen with 2018 Q2 technol
 
 ## Install
 
-For the backend You need to have Docker and Docker Compose:
+Before executing each code snippet, make sure you `cd` back to the project's root folder!
 
+For the backend You need to have Composer, Docker and Docker Compose:
+
+	composer install # Install PHP dependencies
+	php artisan key:generate # Generate an app key
     cd laradock
-    docker-compose up -d nginx mysql phpmyadmin redis workspace
+    docker-compose up -d nginx mysql phpmyadmin redis workspace # Start docker containers
+    docker-compose exec workspace bash # Login to the workspace container
+    artisan migrate # Run migrations to create database tables
+    artisan passport:install # Generate Passport Oauth tokens and clients
+    artisan app:copy-grant-credentials # Set oauth password grant client credentials for .env file 
+    exit
+    docker-compose ps # Check if anything is running well
 
 For the frontend you need Node.js and NPM:
 
     cd resources/assets/js/app
-    npm start # Run dev server.
-    npm run build # Compile for production
+	npm install # Install JS dependencies
+    
+To run the backend in dev mode, set `APP_PROD=false` in `.env` and keep running this in a console tab:
+
+    cd resources/assets/js/app
+    npm start
+
+To run the backend in prod mode, set `APP_PROD=true` in `.env` then run the following command **only and every time you make changes**. This is similar to compiling:
+
+    cd resources/assets/js/app
+    npm run build
 
 - Site runs on http://localhost
-- PhpMyAdmin runs on http://localhost:8080
-- Webpack dev server runs on http://localhost:8081
+- PhpMyAdmin runs on http://localhost:8080 (server: mysql, user: root, pass: root)
+- Webpack dev server runs on http://localhost:8081 (only needed with `APP_PROD=false`)
